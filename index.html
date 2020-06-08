@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <!--Reset & Style CSS, Bootstrap, Font Awesome, and Google Font links-->
-  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="./css/reset.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
   <!--Google Fonts-->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 
-  <title>Work Day Scheduler</title>
+  <title>Work Day Planner</title>
 </head>
 
 <body>
@@ -25,9 +25,26 @@
     <p id="currentTime" class="lead"></p>
   </header>
 
-  <div class="container">
-    <!-- Timeblocks go here -->
-
+  <div class="plannerContainer">
+    <!-- Timeblocks -->
+    <p class='hour'> 9AM <input type="text" class="hr" id="9hr" data-index="9" style="width: 80%" ;><button
+      class="saveBtn"> <i class="far fa-save" alt="floppy disk icon"></i> </button> </p>
+    <p class='hour'> 10AM <input type="text" class="hr" id="10hr" data-index="10" style="width: 80%" ;><button
+         class="saveBtn"> <i class="far fa-save" alt="floppy disk icon"></i> </button></p>
+    <p class='hour'> 11AM <input type="text" class="hr" id="11hr" data-index="11" style="width: 80%" ;><button
+      class="saveBtn"> <i class="far fa-save" alt="floppy disk icon"></i> </button></p>
+    <p class='hour'> 12PM <input type="text" class="hr" id="12hr" data-index="12" style="width: 80%" ;><button
+      class="saveBtn"> <i class="far fa-save" alt="floppy disk icon"></i> </button> </p>
+    <p class='hour'> 1PM <input type="text" class="hr" id="13hr" data-index="13" style="width: 80%" ;><button
+      class="saveBtn"> <i class="far fa-save" alt="floppy disk icon"></i> </button> </p>
+    <p class='hour'> 2PM <input type="text" class="hr" id="14hr" data-index="14" style="width: 80%" ;><button
+      class="saveBtn"> <i class="far fa-save" alt="floppy disk icon"></i> </button> </p>
+    <p class='hour'> 3PM <input type="text" class="hr" id="15hr" data-index="15" style="width: 80%" ;><button
+      class="saveBtn"> <i class="far fa-save" alt="floppy disk icon"></i> </button> </p>
+    <p class='hour'> 4PM <input type="text" class="hr" id="16hr" data-index="16" style="width: 80%" ;><button
+      class="saveBtn"> <i class="far fa-save" alt="floppy disk icon"></i> </button></p>
+    <p class='hour'> 5PM <input type="text" class="hr" id="16hr" data-index="16" style="width: 80%" ;><button
+      class="saveBtn"> <i class="far fa-save" alt="floppy disk icon"></i> </button> </p>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
