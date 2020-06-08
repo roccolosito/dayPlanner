@@ -7,49 +7,28 @@ $(document).ready(function () {
     let currentTime = $('#currentTime');
     currentTime.text(today);
 
-    // function addTimeBlock() {
-    //     var tb = $("<tr>");
-    //     // var times = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
-    //     tb.append($("<td>").text());
-    //     $('.plannerContainer').append(tb);
-    // };  
+    // Calling the compareTime() function
+    compareTime();
 
-    // addTimeBlock(["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"]);
+    // Comparing the current hour to the correlating timeBLock so that past, present & future
+    // times are color-coordinated
+    function compareTime() {
+        var nowTime = parseInt(moment().format('HH'));
 
-    
+        //Start from 9AM, till 5PM
+        for (time = 9; 17 >= time; time++) {
+            var timeBlock = parseInt($("#" + time + "hr").attr("data-index"));
+            console.log(timeBlock)
 
-    //   // build calendar by row for fix set of hours
-    //   for (let hour = 9; 17 => hour; hour++) {
-    //     // index for array use offset from hour
-    //     let index = hour - 9;
+            if (timeBlock < nowTime) {
+                $("#" + time + "hr").addClass("past");
+            } else if (timeBlock == nowTime) {
+                $("#" + time + "hr").addClass("present");
+            } else if (timeBlock > nowTime) {
+                $("#" + time + "hr").addClass("future");
+            }
+        }
 
-    // // build row components
-    // let rowDiv = $('<div>');
-    // rowDiv.addClass('row');
-    // rowDiv.addClass('time-block');
-    // rowDiv.attr('hour-index', hour);
+        // "background", "salmon"
 
-    // // Create time-block column & add to 
-    // let timeBlock = $('<div>');
-    // timeBlock.addClass('col-md-1');
-
-    // // create timeBlock element (contains time)
-    // const timeBox = $('<span>');
-    // // can use this to get value
-    // timeBox.attr('class', 'timeBox');
-
-    // // format hours for display
-    // let displayHour = 0;
-    // let ampm = "";
-    // if (hour > 12) {
-    //     displayHour = hour - 12;
-    //     ampm = "pm";
-    // } else {
-    //     displayHour = hour;
-    //     ampm = "am";
-    // }
-
-    // // populate timeBox with time
-    // timeBox.text(`${displayHour} ${ampm}`);
-
-})
+}})
