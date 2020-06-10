@@ -15,7 +15,7 @@ $(document).ready(function () {
     function compareTime() {
         var nowTime = parseInt(moment().format('HH'));
 
-        //Start from 9AM & go to 5PM (e.g., regular business hours)
+        // Start from 9AM & go to 5PM (e.g., regular business hours)
         for (time = 9; 17 >= time; time++) {
             var timeBlock = parseInt($("#" + time + "hr").attr("data-index"));
             console.log(timeBlock)
@@ -29,10 +29,21 @@ $(document).ready(function () {
             }
         }
 
+        // Click event for hitting save button & adding user's inputs in to LocalStorage
+        function plansEvent(event) {
+            var userInput = $(this).siblings("input").val().trim();
+            var hourId = $(this).siblings("input").attr("data-index");
+
+            localStorage.setItem(hourId, userInput);
+        }
+
+        $(".saveBtn").on("click", plansEvent)
+
         // Function to auto-refresh page after 5 minutes to ensure time-block
         // colors update every hour without having to manually refresh the page.
-        setTimeout(function(){
+        setTimeout(function () {
             location.reload();
-        },300000);
+        }, 300000);
 
-}})
+    }
+})
