@@ -45,6 +45,10 @@ textarea {
   padding: 10px 0px 10px 100px;
 }
 
+.hr {
+  height: 50px;
+}
+
 .past {
   background-color: #D4F4DD;
   color: black;
@@ -73,7 +77,7 @@ textarea {
 }
 
 i {
-  padding: 2.5px 5px 2.5px 5px;
+  padding: 14.5px 10px 13px 10px;
 }
 
 /* @media (max-width: 768px) {

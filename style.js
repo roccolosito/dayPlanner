@@ -37,7 +37,7 @@ $(document).ready(function () {
             localStorage.setItem(hourId, userInput);
         }
 
-        $(".saveBtn").on("click", plansEvent)
+        // $(".saveBtn").on("click", plansEvent)
 
         // Function to auto-refresh page after 5 minutes to ensure time-block
         // colors update every hour without having to manually refresh the page.
