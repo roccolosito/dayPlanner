@@ -8,5 +8,10 @@ Here is a link to the deployed app: https://roccolosito.github.io/dayPlanner/
 
 Here are some screenshots of the webpage:
 
+This is the Homepage-
+![Calendar](./images/calendar.png)
+
+This is an example of a calendar event for 10AM-
+![Input](./images/input.png)
 
 
