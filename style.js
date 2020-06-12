@@ -31,21 +31,32 @@ $(document).ready(function () {
 
         // Get stored plans from localStorage
         // Parsing the JSON string to an object
-        let storedPlans = JSON.parse(localStorage.getItem("storedPlans"));
+        // let storedPlans = JSON.parse(localStorage.getItem("storedPlans"));
       
         // If plans were retrieved from localStorage, update the plan array to it
-        if (storedPlans !== null) {
-            planTextArr = storedPlans;
-        };
-        // save input to scheduler
+        // if (storedPlans !== null) {
+        //     planTextArr = storedPlans;
+        // };
+
+        // Save plans inputs to Local Storage.
         $('.saveBtn').click(function (e) {
             event.preventDefault();
             var input = $(this).prev();
             var storedPlans = input.val();
             var key = input.attr("data-index");
             localStorage.setItem(key, storedPlans);
+            // window.localStorage.getItem(key);
         });
 
+        // window.localStorage.getItem(key);
+
+        // window.onload = function() {
+
+        //     var plans = localStorage.getItem("plans", storedPlans);
+        //     if (plans !== null) $("data-index").val(storedPlans);
+        
+            // ...
+        }
 
         // Function to auto-refresh page after 5 minutes to ensure time-block
         // colors update every hour without having to manually refresh the page.
@@ -53,5 +64,4 @@ $(document).ready(function () {
             location.reload();
         }, 300000);
 
-    }
 })
