@@ -29,14 +29,23 @@ $(document).ready(function () {
             }
         }
 
-        // Get stored plans from localStorage
-        // Parsing the JSON string to an object
-        // let storedPlans = JSON.parse(localStorage.getItem("storedPlans"));
-      
-        // If plans were retrieved from localStorage, update the plan array to it
-        // if (storedPlans !== null) {
-        //     planTextArr = storedPlans;
-        // };
+        // Retrieve storedPlans from Local Storage when page is reloaded.
+        function getStoredPlans(time) {
+            var storage = localStorage.getItem('get');
+            // console.log(storage);
+            if (storage == undefined) {
+                return '';
+            }
+            storage = JSON.parse(storage);
+            var slotDescription = storage;
+            console.log(slotDescription);
+
+            if (time == undefined) {
+                return '';
+            }
+            return slotDescription;
+        }
+        getStoredPlans();
 
         // Save plans inputs to Local Storage.
         $('.saveBtn').click(function (e) {
@@ -45,18 +54,7 @@ $(document).ready(function () {
             var storedPlans = input.val();
             var key = input.attr("data-index");
             localStorage.setItem(key, storedPlans);
-            // window.localStorage.getItem(key);
         });
-
-        // window.localStorage.getItem(key);
-
-        // window.onload = function() {
-
-        //     var plans = localStorage.getItem("plans", storedPlans);
-        //     if (plans !== null) $("data-index").val(storedPlans);
-        
-            // ...
-        }
 
         // Function to auto-refresh page after 5 minutes to ensure time-block
         // colors update every hour without having to manually refresh the page.
@@ -64,4 +62,5 @@ $(document).ready(function () {
             location.reload();
         }, 300000);
 
+    }
 })
