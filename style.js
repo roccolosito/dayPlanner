@@ -29,32 +29,23 @@ $(document).ready(function () {
             }
         }
 
-        // Retrieve storedPlans from Local Storage when page is reloaded.
-        function getStoredPlans(time) {
-            var storage = localStorage.getItem('get');
-            // console.log(storage);
-            if (storage == undefined) {
-                return '';
-            }
-            storage = JSON.parse(storage);
-            var slotDescription = storage;
-            console.log(slotDescription);
-
-            if (time == undefined) {
-                return '';
-            }
-            return slotDescription;
-        }
-        getStoredPlans();
-
         // Save plans inputs to Local Storage.
-        $('.saveBtn').click(function (e) {
+        $('.saveBtn').click(function(e) {
             event.preventDefault();
             var input = $(this).prev();
             var storedPlans = input.val();
             var key = input.attr("data-index");
-            localStorage.setItem(key, storedPlans);
+            saveData(key, storedPlans);
         });
+
+        function saveData(key, storedPlans) {
+            localStorage.setItem(key, storedPlans);
+        }
+
+        function getData(key) {
+            return localStorage.getItem(key);
+
+        }
 
         // Function to auto-refresh page after 5 minutes to ensure time-block
         // colors update every hour without having to manually refresh the page.
